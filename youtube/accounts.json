@@ -1,0 +1,37 @@
+[
+  {
+    "key": "cd_yt_yan_en",
+    "platform": "youtube",
+    "language": "en",
+    "name": "Yan An / Yan Studio",
+    "url": "https://www.youtube.com/@YanStudio2000"
+  },
+  {
+    "key": "cd_yt_music_en",
+    "platform": "youtube",
+    "language": "en",
+    "name": "Find Music Masters",
+    "url": "https://www.youtube.com/@findmusicmasters"
+  },
+  {
+    "key": "cd_yt_local_en",
+    "platform": "youtube",
+    "language": "en",
+    "name": "Local Panda",
+    "url": "https://www.youtube.com/@localpanda1"
+  },
+  {
+    "key": "cd_yt_yummy_en",
+    "platform": "youtube",
+    "language": "en",
+    "name": "Oh Yummy",
+    "url": "https://www.youtube.com/@ohyummy"
+  },
+  {
+    "key": "cd_yt_fr",
+    "platform": "youtube",
+    "language": "fr",
+    "name": "Panda Local",
+    "url": "https://www.youtube.com/@Pandalocal-2"
+  }
+]

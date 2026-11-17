@@ -1,0 +1,30 @@
+[
+  {
+    "key": "cd_fb_en",
+    "platform": "facebook",
+    "language": "en",
+    "name": "Local Panda",
+    "url": "https://www.facebook.com/Localpanda02/"
+  },
+  {
+    "key": "cd_fb_fr",
+    "platform": "facebook",
+    "language": "fr",
+    "name": "Local Panda",
+    "url": "https://www.facebook.com/LocalPanda03/"
+  },
+  {
+    "key": "cd_fb_es",
+    "platform": "facebook",
+    "language": "es",
+    "name": "Local Panda",
+    "url": "https://www.facebook.com/LocalPanda04/"
+  },
+  {
+    "key": "cd_fb_pt",
+    "platform": "facebook",
+    "language": "pt",
+    "name": "Local Panda",
+    "url": "https://www.facebook.com/LocalPanda01/"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "key": "cns_ig_dailyvideo",
+    "entity": "中国新闻网",
+    "platform": "instagram",
+    "language": "und",
+    "username": "dailyvideo.kg",
+    "url": "https://www.instagram.com/dailyvideo.kg/",
+    "entity_assignment_source": "bundled_public_account_configuration",
+    "ownership_status": "not_independently_verified"
+  },
+  {
+    "key": "cns_ig_chinaarabtv",
+    "entity": "中国新闻网",
+    "platform": "instagram",
+    "language": "und",
+    "username": "chinaarabtv",
+    "url": "https://www.instagram.com/chinaarabtv/",
+    "entity_assignment_source": "bundled_public_account_configuration",
+    "ownership_status": "not_independently_verified"
+  }
+]

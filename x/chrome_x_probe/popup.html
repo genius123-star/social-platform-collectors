@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>账号内容采集</title>
+<style>body{font:14px/1.5 system-ui,sans-serif;color:#17212b;min-width:390px;max-width:760px;margin:14px}label{display:block;margin:7px 0}input,select,button{font:inherit;padding:6px;box-sizing:border-box}input[type=text],select{width:100%}button{margin:4px 3px 4px 0}fieldset{border:1px solid #cbd4dc;border-radius:7px;margin:12px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f4f7;padding:10px;border-radius:6px}small{color:#52616f}#error{color:#a51d27}a{overflow-wrap:anywhere}</style></head><body>
+<h3 id="title">账号内容采集</h3><small>候选版本：真实跨页、恢复及后台能力需在普通浏览器中验收。关闭弹窗不会取消已提交任务。</small>
+<fieldset><legend>新建批次</legend>
+<label>目标账号或主页<input id="target" type="text"></label><label>主体名称（必填）<input id="entity" type="text" placeholder="如：中国新闻网"></label>
+<label>研究期（北京时间）<input id="start" type="date" value="2025-10-17"> 至 <input id="end" type="date" value="2026-10-17"></label>
+<label>模式<select id="mode"><option value="sample3">试采3条</option><option value="sample10">试采10条</option><option value="formal">正式采集（本轮时限内持续运行）</option><option value="here">TikTok：从当前位置新建</option></select></label>
+<label>本轮最长运行小时数<input id="hours" type="number" min="0.1" max="24" step="0.1" value="6"></label>
+<button id="start-run">新建并开始</button><button id="diagnose">只诊断当前页面</button><button id="diagnostic-file">导出当前页诊断</button></fieldset>
+<fieldset><legend>已保存批次</legend><select id="runs"><option value="">请选择批次</option></select>
+<button id="refresh">更新进度</button><button id="resume">恢复原批次</button><button id="pause">暂停</button><button id="stop">停止</button>
+<label>重试指定作品ID（留空使用可见断点）<input id="retry-id" type="text"></label>
+<button id="retry">重试断点／指定内容</button><button id="skip">跳过中断内容后继续</button><button id="show-detail">显示受控详情页</button>
+<div id="x-segment-controls"><label>定向补采日期段<select id="segment-choice"></select></label><button id="retry-segment">从所选日期段继续</button></div>
+<pre id="status">暂无选中批次</pre><a id="checkpoint" target="_blank" rel="noopener noreferrer"></a>
+<p><button id="csv">导出中文数据CSV</button><button id="report">导出运行报告</button><button id="backup">导出原始记录与断点备份</button></p>
+<small>数据CSV每行一条内容；0表示明确为0，空白表示未取得。运行报告与备份单独保存。暂停、无新增及预算耗尽均不表示历史完整。</small></fieldset>
+<fieldset><legend>导入已有数据，不覆盖旧批次</legend><input id="files" type="file" multiple accept=".json,.csv"><button id="import">导入为新批次</button>
+<button id="legacy">导出旧版存储备份</button>
+<small>支持本版备份、已知平台原始JSON、schema/payload技术CSV或content_url链接CSV；账号必须与上方目标一致。</small></fieldset>
+<pre id="error" role="status"></pre>
+<script src="config.js"></script><script src="core.js"></script><script src="platform_reader.js"></script><script src="popup.js"></script></body></html>

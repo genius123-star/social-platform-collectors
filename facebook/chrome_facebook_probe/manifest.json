@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Facebook 通用帖子采集",
+  "version": "0.6.9",
+  "description": "从当前账号主页启动，批次绑定目标；中文帖子与评论表导出，支持断点和异常恢复。",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "unlimitedStorage",
+    "alarms"
+  ],
+  "background": {
+    "service_worker": "supervisor.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

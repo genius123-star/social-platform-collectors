@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>VK结构核验</title>
+<style>
+body{width:365px;margin:18px;font:14px/1.6 "Microsoft YaHei",sans-serif;color:#233047;background:#f6f8fb}h1{font-size:18px;margin:0 0 8px}p{margin:8px 0}button,select{font:inherit;padding:8px;border:1px solid #b9c7d8;border-radius:6px;background:white;max-width:100%}button{cursor:pointer;margin:5px 3px 5px 0}button:disabled{opacity:.5;cursor:default}#capture{background:#1769aa;color:white;border:0}select{width:100%}#status{white-space:pre-wrap;background:#e9eff7;padding:10px;border-radius:6px}small{display:block;color:#52627a}
+</style>
+<h1>VK公开采集 · 0.5.1</h1>
+<p>先在正常Chrome中登录并打开俄文中国网主页，让首批帖子显示出来，再读取当前公开结构。</p>
+<button id="capture">读取当前页样本与结构</button>
+<button id="hover">开启时间提示记录</button>
+<button id="auto">自动试采3帖</button>
+<button id="history">采集研究期间帖子</button>
+<label><input id="current" type="checkbox">从当前位置开始（上方不计入覆盖）</label>
+<small>研究期：2025-10-17至2026-10-17。未显示年份按2026年、未显示时区按北京时间。请保持VK标签页可见；关闭小窗不停止。每次最多运行30分钟或处理200帖，可继续原批次。</small>
+<p id="status" role="status" aria-live="polite">等待读取；当前没有已核验的帖子。</p>
+<label for="runs">已保存诊断批次</label><select id="runs"><option value="">暂无批次</option></select>
+<button id="progress">刷新进度</button><button id="stop" disabled>暂停所选采集</button><button id="resume" disabled>继续所选批次</button>
+<button id="raw" disabled>导出原始记录JSON</button><button id="report" disabled>导出采集摘要CSV</button>
+<button id="posts" disabled>导出全部帖子CSV（可读）</button><button id="account" disabled>导出账号CSV</button>
+<button id="research" disabled>导出期间内帖子</button><button id="outside" disabled>导出期间外帖子</button><button id="pending" disabled>导出日期待核验帖子</button>
+<button id="comments" disabled>导出评论回复</button><button id="media" disabled>导出媒体</button><button id="relations" disabled>导出附件关系</button><button id="tooltip" disabled>导出时间提示</button>
+<small>CSV只保留研究字段和中文说明；缺失数值留空。正式研究请使用“期间内帖子”，全部帖子包含期间外样本。导出仅对应选中批次。</small>
+<script src="core.js"></script><script src="samples.js"></script><script src="popup.js"></script></html>

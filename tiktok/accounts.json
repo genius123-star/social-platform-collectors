@@ -1,0 +1,37 @@
+[
+  {
+    "key": "cd_tt_en",
+    "platform": "tiktok",
+    "language": "en",
+    "name": "Local Panda",
+    "url": "https://www.tiktok.com/@pandalocal"
+  },
+  {
+    "key": "cd_tt_fr",
+    "platform": "tiktok",
+    "language": "fr",
+    "name": "Local Panda",
+    "url": "https://www.tiktok.com/@pandalocal01"
+  },
+  {
+    "key": "cd_tt_es",
+    "platform": "tiktok",
+    "language": "es",
+    "name": "Local Panda",
+    "url": "https://www.tiktok.com/@pandalocal2"
+  },
+  {
+    "key": "cd_tt_pt",
+    "platform": "tiktok",
+    "language": "pt",
+    "name": "Local Panda",
+    "url": "https://www.tiktok.com/@pandalocal0"
+  },
+  {
+    "key": "cd_tt_yummy_en",
+    "platform": "tiktok",
+    "language": "en",
+    "name": "Oh yummy",
+    "url": "https://www.tiktok.com/@oh___yummy"
+  }
+]

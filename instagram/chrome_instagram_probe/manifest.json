@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram 采集验证",
+  "version": "0.4.2",
+  "description": "Instagram公开内容研究采集：独立任务、正式模式、断点恢复、可读表与原始证据。",
+  "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage", "alarms"],
+  "host_permissions": ["https://www.instagram.com/*", "https://instagram.com/*"],
+  "background": {"service_worker": "supervisor.js"},
+  "action": {"default_popup": "popup.html"}
+}

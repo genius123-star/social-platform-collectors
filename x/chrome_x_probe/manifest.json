@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "X 通用账号采集",
+  "version": "0.6.5",
+  "minimum_chrome_version": "120",
+  "description": "独立批次、详情队列、暂停续采与中文CSV；真实长期和后台能力待验收。",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "unlimitedStorage",
+    "alarms",
+    "tabs",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://www.x.com/*",
+    "https://twitter.com/*",
+    "https://www.twitter.com/*"
+  ],
+  "background": {
+    "service_worker": "supervisor.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://www.x.com/*",
+        "https://twitter.com/*",
+        "https://www.twitter.com/*"
+      ],
+      "js": [
+        "x_capture.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}

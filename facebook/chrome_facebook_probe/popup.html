@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>Facebook 通用采集</title>
+<style>body{width:360px;padding:16px;font:14px/1.6 system-ui}button{padding:8px;margin:4px}select{max-width:350px}#status{white-space:pre-wrap;position:sticky;top:0;z-index:10;background:#fff8dc;border:1px solid #c59b34;padding:10px;max-height:150px;overflow:auto}</style>
+<h2>Facebook 自适应采集 v0.6.9</h2>
+<p>正式采集按日期边界自动停止，不限制帖子数和滚动次数，按“帖子列表→详情→所有评论→保存→返回”持续采集。固定研究区间为北京时间2025-10-17至2026-10-17（含首尾）；保留原始观察，导入时筛选区间，日期不明另存待核验。完整显示日期按用户指定的北京时间解释，不补猜年份。图文和视频统一从评论图标进入，图片详情打不开时保留首页数据；播放量、浏览量标记为无法获取。</p>
+<p>每次运行最长6小时；每帖最多50次评论／回复展开，达到预算会标记不完整。从新向旧扫描，确认区间内记录后，连续至少5条非置顶旧帖早于2025-10-17零点，且额外2轮加载仍无区间内或日期不明帖时，按日期边界停止；到达稳定页底也可确认边界。乱序或日期不明重置确认，不宣称全部帖子与评论均已覆盖。暂停、停止或刷新后，可恢复所选批次；保留Facebook网页及网络连接。原3帖和10帖测试仍为15分钟。简介、认证、创建时间由人工获取。</p>
+<p id="status" role="status" aria-live="polite">等待操作。点击后将在这里显示启动进度或错误。</p>
+<section id="checkpointInfo" aria-label="所选批次断点信息" style="padding:10px;border:1px solid #26765c;background:#f2faf5;margin-bottom:10px">请选择本地批次查看断点。</section>
+<button id="formal">新建正式采集（不限帖数）</button>
+<button id="formalHere">从当前位置新建正式采集</button>
+<p>先手动滚到目标日期附近，让起始帖子出现在屏幕中，再点击“从当前位置”。此模式不回到顶部，会跳过起始帖上方的帖子；继续旧批次请用“从断点继续”。</p>
+<button id="start10">新建10帖测试</button><button id="start">新建3帖循环</button><button id="resume">从断点继续（所选批次）</button>
+<button id="dialog">读取当前帖子弹窗</button><button id="profile">读取账号资料</button>
+<button id="togglePanel">显示／隐藏网页面板</button>
+<button id="stopRun">停止所选批次（含自动恢复）</button>
+<p>后台运行：已移除绘制帧等待；正式任务会保护当前采集标签，停止后恢复原设置。页面隐藏或失去焦点不会单独触发刷新或切回前台。请在Chrome性能设置中让facebook.com保持活动，并关闭节能模式。后台无新增时等待15秒后重试，不计为已到底；切回可见后重新核验。浏览器真正冻结页面时须等待解除冻结，单次总时限仍有效。</p>
+<p>新建任务自动识别当前账号主页，每个批次固定目标账号。正式采集会自动将意外跳转的本标签页带回该批次的目标主页，保留断点并跳过出错帖继续；运行时请将该标签页专用于采集。点击停止后不再自动返回。登录验证、权限失效或连续恢复失败需要人工处理。</p>
+<p>隐藏面板不停止任务；停止采集请使用网页面板中的“停止”。</p>
+<hr><button id="discoveryProbe">保存帖子识别诊断（不采集）</button><button id="diagnose">保存当前页面结构CSV（诊断）</button>
+<p>仅保存当前公开帖子的元素关系、控件标签和可见范围；不会点击、翻页或启动采集循环。可在主页、帖子弹窗及已保存帖子的Reels界面使用。</p>
+<p id="diagnosticStatus" role="status">结构诊断：尚未保存。此状态独立于下方采集批次。</p>
+<p><label>本地批次 <select id="runs"></select></label></p>
+<button id="download">导出帖子表（中文列名）</button><button id="downloadComments">导出评论表（中文列名）</button><button id="downloadRaw">导出原始证据（诊断）</button>
+<p>帖子与评论分表导出；无法获取的数据不会补成0。从断点继续优先保留当前目标主页和已加载位置，不刷新；已跳离目标时才返回。断点按帖子编号核验，不会直接跳过中断帖。</p>
+<script src="target.js"></script><script src="comment_reader.js"></script><script src="publication_time.js"></script><script src="checkpoint.js"></script><script src="readable_export.js"></script><script src="export_csv.js"></script><script src="popup.js"></script></html>
